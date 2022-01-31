@@ -1,15 +1,24 @@
+import { Content } from "./content-interface";
+
 class ContentList{
- private _items: Content[];
+    static itemCount = 0;
+    private _items: Content[];
+
     constructor(item: Content){
-        this._items = [];
+        this._items = []; //initialize array
+        this._items[0] = item;
+        this.increaseCount();
     }
 
+
  get items(): Content[]{
-     return this._items;
+    return this._items;
  }
 
- addItem(){
-     
+
+ increaseCount(){
+     return ++ContentList.itemCount;
  }
 
 }
+
