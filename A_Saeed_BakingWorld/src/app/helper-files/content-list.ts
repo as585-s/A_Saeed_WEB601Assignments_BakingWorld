@@ -1,13 +1,10 @@
 import { Content } from "./content-interface";
 
-class ContentList{
-    static itemCount = 0;
+export class ContentList{
     private _items: Content[];
 
-    constructor(item: Content){
+    constructor(){
         this._items = []; //initialize array
-        this._items[0] = item;
-        this.increaseCount();
     }
 
 
@@ -15,10 +12,27 @@ class ContentList{
     return this._items;
  }
 
+addItem(oneContentItem: Content): void{
+    this._items.push(oneContentItem);
+}
 
- increaseCount(){
-     return ++ContentList.itemCount;
- }
+numberOfItems(): number{
+    return this._items.length;
+}
+
+getHTML(index: number): string{
+    if(index >= this._items.length || index < 0)
+    {
+        return "<div>Something went terribly wrong</div>"
+    }
+    let itemAtIndex = this._items[index]
+
+    return `<div class="title">${itemAtIndex.title}</div>
+            <div class="description">${itemAtIndex.description}</div>
+            <div class="creator">${itemAtIndex.creator}</div>
+            <div class="image"><img src="${itemAtIndex.imgURL}" width="200"</div>
+            <div class="type">${itemAtIndex.type}</div>`;
+    }
 
 }
 
