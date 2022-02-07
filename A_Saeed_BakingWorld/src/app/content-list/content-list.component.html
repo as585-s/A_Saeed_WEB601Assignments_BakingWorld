@@ -1,2 +1,9 @@
 <p>content-list works!</p>
-<app-content-card *ngFor="let item of contentArray"[content]="item"></app-content-card>
+
+
+    <h1 class="title">{{content? content.title: ""}}</h1>
+    <div class="description">{{content? content.description: ""}}</div>
+    <div class="creator">{{content? content.creator: ""}}</div>
+    <div><img [src]= "content? content.imgURL: ''"></div>
+    <div class="type">{{content? content.type: ""}}</div>
+    <div class="tags">{{content? content.tags: ""}}</div>

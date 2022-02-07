@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -7,7 +7,9 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
+  @Input() content?: Content;
   contentArray: Content[];
+  
   constructor() {
     this.contentArray = [{
       id: 0,
