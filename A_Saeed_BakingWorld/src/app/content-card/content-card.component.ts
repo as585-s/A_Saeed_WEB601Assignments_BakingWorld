@@ -19,4 +19,8 @@ export class ContentCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  imageClicked(): void{
+    console.log("ID: ", this.content?.id, ", Title: ", this.content?.title);
+  }
+
 }
