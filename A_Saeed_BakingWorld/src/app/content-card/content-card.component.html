@@ -3,15 +3,15 @@
 </h3>
 <img (click)="imageClicked()" *ngIf="content?.imgURL" 
 class="image" [src]="content?.imgURL">
-<p> {{ content?.description}}</p>
+<p> Description: {{ content?.description}}</p>
 
 <div class="meta-data">
     <div class="creator">
-        {{content?.creator}}
+        Creator: {{content?.creator}}
     </div>
     
     <div *ngIf="content?.type" class="content?.type">
-        {{ content?.type}}
+        Type: {{ content?.type}}
     </div>
     <div class="tags" *ngIf="content?.tags">
         <span class="tag" *ngFor="let tag of content?.tags">
