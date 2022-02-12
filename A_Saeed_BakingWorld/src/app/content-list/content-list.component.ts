@@ -25,7 +25,7 @@ export class ContentListComponent implements OnInit {
       description: "Best ever home made pizza ",
       creator: "Makinze Gore",
       imgURL: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-homemade-pizza-horizontal-1542312378.png?crop=1.00xw:1.00xh;0,0&resize=980:*",
-      type: "All purpose flour",
+      type: "",
       tags: ['Delish Pizza', "home made pizza"]},
     {
       id: 2,
@@ -33,7 +33,7 @@ export class ContentListComponent implements OnInit {
       description: "Home baked bread",
       creator: "Jenny Jones",
       imgURL: "https://www.jennycancook.com/wp-content/uploads/2016/04/Simple_Whole_Wheat_Bread.jpg",
-      type: "Whole Wheat",
+      type: "Flour",
       tags: ['Delish Bread', "home baked bread"]},
     {
       id: 3,
@@ -41,7 +41,7 @@ export class ContentListComponent implements OnInit {
       description: "Chicken and Rice Casserole",
       creator: "Sienna Livermore",
       imgURL: "https://life-in-the-lofthouse.com/wp-content/uploads/2015/11/Chicken-Noodle-Casserole_new.jpg",
-      type: "Baked chicken",
+      type: "",
       tags: ['Delish Chicken', "Baked chicken"]},
     {
       id: 4,
@@ -49,7 +49,7 @@ export class ContentListComponent implements OnInit {
       description: "Perfect baked potatoes",
       creator: "Jeanine and Jack",
       imgURL: "https://cdn.loveandlemons.com/wp-content/uploads/2020/01/baked-potato-580x580.jpg",
-      type: "Baked potatoes",
+      type: "Vegetables",
       tags: ['Love and Lemons', "Baked potatoes"]
     },
     {
@@ -60,6 +60,15 @@ export class ContentListComponent implements OnInit {
       imgURL: "https://thekitchencommunity.org/wp-content/uploads/2021/07/Roast-Beef-Curry.jpg",
       type: "Roast beef",
       tags: ['The Kitchen Community', "Roast Beef"]
+    },
+    {
+      id: 6,
+      title: "Oven Baked Salmon",
+      description: "Baked Salmon",
+      creator: "Kathleen Daelemans",
+      imgURL: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/7/26/1/CN1B01_oven-baked-salmon_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382545141944.jpeg",
+      type: "Fish",
+      tags: ['Food Network', "Baked Salmon"]
     }
   ]
    }
