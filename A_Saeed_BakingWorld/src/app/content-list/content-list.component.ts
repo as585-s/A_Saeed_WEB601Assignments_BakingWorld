@@ -33,7 +33,7 @@ export class ContentListComponent implements OnInit {
       description: "Home baked bread",
       creator: "Jenny Jones",
       imgURL: "https://www.jennycancook.com/wp-content/uploads/2016/04/Simple_Whole_Wheat_Bread.jpg",
-      type: "Flour",
+      type: "Wheat",
       tags: ['Delish Bread', "home baked bread"]},
     {
       id: 3,
@@ -49,7 +49,7 @@ export class ContentListComponent implements OnInit {
       description: "Perfect baked potatoes",
       creator: "Jeanine and Jack",
       imgURL: "https://cdn.loveandlemons.com/wp-content/uploads/2020/01/baked-potato-580x580.jpg",
-      type: "Vegetables",
+      type: "Vegetable",
       tags: ['Love and Lemons', "Baked potatoes"]
     },
     {
@@ -58,7 +58,7 @@ export class ContentListComponent implements OnInit {
       description: "Roast beef curry",
       creator: "Cassie Marshall",
       imgURL: "https://thekitchencommunity.org/wp-content/uploads/2021/07/Roast-Beef-Curry.jpg",
-      type: "Roast beef",
+      type: "Beef",
       tags: ['The Kitchen Community', "Roast Beef"]
     },
     {
