@@ -1,1 +1,2 @@
-<app-content-card *ngFor="let item of contentList" [content]="item"></app-content-card>
+<app-content-card *ngFor="let item of contentList; first as isFirstContentOnList"
+[class.first-content]="isFirstContentOnList" [content]="item"></app-content-card>
