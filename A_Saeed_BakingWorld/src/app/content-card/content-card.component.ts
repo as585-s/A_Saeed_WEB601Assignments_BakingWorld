@@ -9,7 +9,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-  @Input() content?: Content;
+  @Input() contentItem?: Content;
   
 
   constructor() {
@@ -20,7 +20,7 @@ export class ContentCardComponent implements OnInit {
   }
 
   imageClicked(): void{
-    console.log("ID: ", this.content?.id, ", Title: ", this.content?.title);
+    console.log("ID: ", this.contentItem?.id, ", Title: ", this.contentItem?.title);
   }
 
 }

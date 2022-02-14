@@ -1,20 +1,20 @@
 <h3 class="title">
-    {{content?.title}}
+    {{contentItem?.title}}
 </h3>
-<img (click)="imageClicked()" *ngIf="content?.imgURL" 
-class="image" [src]="content?.imgURL">
-<p> Description: {{ content?.description}}</p>
+<img (click)="imageClicked()" *ngIf="contentItem?.imgURL" 
+class="image" [src]="contentItem?.imgURL">
+<p> Description: {{ contentItem?.description}}</p>
 
 <div class="meta-data">
     <div class="creator">
-        Creator: {{content?.creator}}
+        Creator: {{contentItem?.creator}}
     </div>
     
-    <div *ngIf="content?.type" class="content?.type">
-        Type: {{ content?.type}}
+    <div *ngIf="contentItem?.type" class="contentItem?.type">
+        Type: {{ contentItem?.type}}
     </div>
-    <div class="tags" *ngIf="content?.tags">
-        <span class="tag" *ngFor="let tag of content?.tags">
+    <div class="tags" *ngIf="contentItem?.tags">
+        <span class="tag" *ngFor="let tag of contentItem?.tags">
             #{{tag}}
         </span>   
     </div>

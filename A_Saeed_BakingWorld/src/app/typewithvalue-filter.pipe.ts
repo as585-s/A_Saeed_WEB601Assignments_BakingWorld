@@ -8,7 +8,7 @@ export class TypewithvalueFilterPipe implements PipeTransform {
 
   transform(contentList: Content[]) {
     return contentList.filter(f =>
-      f.type == 'Bread' ? f.type.length == 0 : false
+      f.type == 'Meat' ? f.type.length == 0 : false
       );
   }
 
