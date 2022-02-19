@@ -50,7 +50,7 @@ export class ContentListComponent implements OnInit {
       description: "Perfect baked potatoes",
       creator: "Jeanine and Jack",
       imgURL: "https://cdn.loveandlemons.com/wp-content/uploads/2020/01/baked-potato-580x580.jpg",
-      type: "",
+      type: "Vegetable",
       tags: ['Love and Lemons', "Baked potatoes"]
     },
     {

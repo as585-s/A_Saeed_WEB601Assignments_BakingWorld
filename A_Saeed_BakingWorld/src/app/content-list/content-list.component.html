@@ -12,3 +12,6 @@
 
 <app-content-card *ngFor="let item of (contentList | typewithvalueFilter: 'Meat'); first as isFirstContentOnList"
 [class.first-content]="isFirstContentOnList" [contentItem]="item" class="meat" [class.found]="item.title == search.value"></app-content-card>
+
+<app-content-card *ngFor="let item of (contentList | typewithvalueFilter: 'Vegetable'); first as isFirstContentOnList"
+[class.first-content]="isFirstContentOnList" [contentItem]="item" class="vegetable" [class.found]="item.title == search.value"></app-content-card>
