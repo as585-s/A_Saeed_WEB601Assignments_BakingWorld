@@ -1,9 +1,13 @@
 <h3 class="title">
     {{contentItem?.title}}
 </h3>
-<img (click)="imageClicked()" *ngIf="contentItem?.imgURL" 
-class="image" [src]="contentItem?.imgURL">
-<p> Description: {{ contentItem?.description}}</p>
+
+<img (click)="imageClicked()" *ngIf="contentItem?.imgURL; else noImage" 
+ class="image" [src]="contentItem?.imgURL">
+ <ng-template #noImage>
+    <img class="image" src = "https://image.shutterstock.com/z/stock-photo-group-picture-of-chinese-cuisine-653854594.jpg">
+ </ng-template>
+ <p> Description: {{ contentItem?.description}}</p>
 
 <div class="meta-data">
     <div class="creator">
