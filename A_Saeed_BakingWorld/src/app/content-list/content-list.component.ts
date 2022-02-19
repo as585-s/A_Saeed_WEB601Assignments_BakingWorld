@@ -41,7 +41,7 @@ export class ContentListComponent implements OnInit {
       title: "Baked Chicken",
       description: "Chicken and Rice Casserole",
       creator: "Sienna Livermore",
-      imgURL: "https://life-in-the-lofthouse.com/wp-content/uploads/2015/11/Chicken-Noodle-Casserole_new.jpg",
+      imgURL: "",
       type: "Meat",
       tags: ['Delish Chicken', "Baked chicken"]},
     {
