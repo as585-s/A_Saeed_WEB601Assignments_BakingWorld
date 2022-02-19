@@ -1,9 +1,14 @@
-
+<div class="search">
+    <input #search>
+    <button (click) = "checkForTitle(search.value)">Check for Title</button>
+    <h4 class="success" *ngIf="searchFlag">Title found</h4>
+    <h4 class="fail" *ngIf="!searchFlag">Title not found</h4>
+</div>
 <app-content-card *ngFor="let item of (contentList | typewithvalueFilter); first as isFirstContentOnList"
-[class.first-content]="isFirstContentOnList" [contentItem]="item"></app-content-card>
+[class.first-content]="isFirstContentOnList" [contentItem]="item" class="notype" [class.found]="item.title == search.value"></app-content-card>
 
 <app-content-card *ngFor="let item of (contentList | typewithvalueFilter: 'Bread'); first as isFirstContentOnList"
-[class.first-content]="isFirstContentOnList" [contentItem]="item"></app-content-card>
+[class.first-content]="isFirstContentOnList" [contentItem]="item" class="bread" [class.found]="item.title == search.value"></app-content-card>
 
 <app-content-card *ngFor="let item of (contentList | typewithvalueFilter: 'Meat'); first as isFirstContentOnList"
-[class.first-content]="isFirstContentOnList" [contentItem]="item"></app-content-card>
+[class.first-content]="isFirstContentOnList" [contentItem]="item" class="meat" [class.found]="item.title == search.value"></app-content-card>

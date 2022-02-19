@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -7,7 +7,8 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-//  @Input() content?: Content;
+  searchMessage: string = "";
+  searchFlag: boolean = false;
   contentList: Content[];
   
   constructor() {
@@ -69,11 +70,24 @@ export class ContentListComponent implements OnInit {
       imgURL: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/7/26/1/CN1B01_oven-baked-salmon_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382545141944.jpeg",
       type: "Meat",
       tags: ['Food Network', "Baked Salmon"]
-    }
-  ]
+    }];
    }
 
   ngOnInit(): void {
+  }
+
+  checkForTitle(searchValue: string): void{
+    let searchList = this.contentList.filter(c=> c.title == searchValue);
+    if (searchList.length > 0){
+      this.searchMessage = "Found the food item!";
+      this.searchFlag = true;
+    } else {
+      this.searchMessage = "No food item with that title";
+      this.searchFlag = false;
+    }
+  }
+  donothing(){
+    
   }
 
 }

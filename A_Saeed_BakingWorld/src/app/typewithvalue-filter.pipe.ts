@@ -10,11 +10,11 @@ export class TypewithvalueFilterPipe implements PipeTransform {
     console.log("filter value: ", filterByThisType);
    // return contentList.filter(f => f.type == filterByThisType);
 
-   return contentList.filter(f=>{
+   return contentList.filter(c=>{
      if(filterByThisType){
-       return f.type == filterByThisType;
+       return c.type == filterByThisType;
      } else {
-       return !f.type; //keep items where type is not set as well.
+       return !c.type; //keep items where type is not set as well.
      }
    });
 

@@ -10,6 +10,19 @@
 :host.first-content{
     border: 2px solid #000;
 }
+:host.notype{
+    background-color: darksalmon;
+}
+:host.bread{
+    background-color: #f5deb3;
+}
+:host.meat{
+    background-color: #f9906f;
+}
+:host.found{
+    border-color: green;
+    border-width: 5px;
+}
 
 .image{
     width: 300px;
