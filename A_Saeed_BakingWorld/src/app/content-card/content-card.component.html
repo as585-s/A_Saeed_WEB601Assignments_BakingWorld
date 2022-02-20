@@ -19,7 +19,7 @@
         Type: {{ contentItem?.type}}
     </div>
     <div class="tags" *ngIf="contentItem?.tags">
-        <span class="tag" *ngFor="let tag of contentItem?.tags">
+        <span appHoverAffect class="tag" *ngFor="let tag of contentItem?.tags">
             #{{tag}}
         </span>   
     </div>
