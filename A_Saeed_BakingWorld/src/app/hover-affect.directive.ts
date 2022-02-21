@@ -30,10 +30,10 @@ export class HoverAffectDirective {
 
 @HostListener("mouseleave") onMouseLeave(){
   if(this.elementType == "type"){
-    this.elm.nativeElement.style.textdecoration = "initial";
+    this.elm.nativeElement.style.textDecoration = "initial";
   }
   else if(this.elementType == "tag"){
-    this.elm.nativeElement.style.textdecoration = "normal";
+    this.elm.nativeElement.style.fontWeight = "normal";
   }
   else if(this.elementType == "card" && this.firstOrLast){
     this.elm.nativeElement.style.border = this.originalElementBorder;
