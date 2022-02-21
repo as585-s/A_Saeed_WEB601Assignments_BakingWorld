@@ -1,4 +1,4 @@
-<h3 appHoverAffect class="title">
+<h3 class="title">
     {{contentItem?.title}}
 </h3>
 
@@ -15,11 +15,11 @@
         Creator: {{contentItem?.creator}}
     </div>
     
-    <div *ngIf="contentItem?.type" class="contentItem?.type">
+    <div appHoverAffect elementType="type" *ngIf="contentItem?.type" class="contentItem?.type">
         Type: {{ contentItem?.type}}
     </div>
     <div class="tags" *ngIf="contentItem?.tags">
-        <span appHoverAffect class="tag" *ngFor="let tag of contentItem?.tags">
+        <span appHoverAffect elementType="tag" class="tag" *ngFor="let tag of contentItem?.tags">
             #{{tag}}
         </span>   
     </div>
