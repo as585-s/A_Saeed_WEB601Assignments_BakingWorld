@@ -1,1 +1,25 @@
-<p>create-content works!</p>
+<div>
+    id: <input #id>
+</div>
+<div>
+    title: <input #title>
+</div>
+<div>
+    description: <input #description>
+</div>
+<div>
+    creator: <input #creator>
+</div>
+<div>
+    imgURL: <input #imgURL>
+</div>
+<div>
+    type: <input #type>
+</div>
+<div>
+    tags: <input #tags>
+</div>
+
+<div>
+    <button (click)="addItem(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Item</button>
+</div>

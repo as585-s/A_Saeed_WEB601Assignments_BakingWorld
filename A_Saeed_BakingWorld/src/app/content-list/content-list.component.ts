@@ -90,4 +90,9 @@ export class ContentListComponent implements OnInit {
     
   }
 
+  addItemToList(newItemFromChild: Content){
+    this.contentList.push(newItemFromChild);
+    this.contentList = [...this.contentList];
+  }
+
 }
