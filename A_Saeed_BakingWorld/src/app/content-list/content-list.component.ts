@@ -71,7 +71,7 @@ export class ContentListComponent implements OnInit {
       type: "Meat",
       tags: ['Food Network', "Baked Salmon"]
     }];
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -93,6 +93,8 @@ export class ContentListComponent implements OnInit {
   addItemToList(newItemFromChild: Content){
     this.contentList.push(newItemFromChild);
     this.contentList = [...this.contentList];
+    console.log("new array values", this.contentList);
   }
+ 
 
 }
