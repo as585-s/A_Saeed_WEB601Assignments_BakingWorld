@@ -1,3 +1,4 @@
+import { ContentService } from './../services/content.service';
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
@@ -12,12 +13,14 @@ export class ContentListComponent implements OnInit {
   searchFlag: boolean = false;
   contentList: Content[] = [];
   
-  constructor() {
+  constructor(private contentService: ContentService) {
 
    }
 
   ngOnInit(): void {
-    
+    this.contentService.getContentObs().subscribe(contentArray =>{
+      return this.contentList = contentArray;
+    })
   }
 
   checkForTitle(searchValue: string): void{
@@ -30,8 +33,7 @@ export class ContentListComponent implements OnInit {
       this.searchFlag = false;
     }
   }
-  donothing(){
-    
-  }
+  
+
 
 }
