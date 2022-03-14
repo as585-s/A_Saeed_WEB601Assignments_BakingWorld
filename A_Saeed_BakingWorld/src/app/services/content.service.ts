@@ -9,11 +9,11 @@ import { Observable, of } from 'rxjs';
 export class ContentService {
 
   constructor() {}
-  
+  /*
     getContent(): Content[]{
       return contentList;
     }
-
+*/
     //function that will retrieve the content array from the contentDb file
     //and return it using the observalbe pattern.
     getContentObs() : Observable<Content[]> {
@@ -21,7 +21,8 @@ export class ContentService {
     }
   
 }
+/*ngOnInit
 function getContent() {
   throw new Error('Function not implemented.');
 }
-
+*/
