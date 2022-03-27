@@ -26,12 +26,18 @@ getContentFromServer(): void{
   this.contentService.getContent().subscribe(contentArray => this.contentList = contentArray);
 }
 
-addContentToList(newContentFromChild: Content): void {
-  this.contentService.addContent(newContentFromChild).subscribe(newContentFromServer => {
-    console.log("new content from server: ", newContentFromServer);
+updateContentInList(contentItem: Content): void{
+  this.contentService.updateContent(contentItem).subscribe(() => {
+    this.getContentFromServer();
+  });
+}
+
+addContentToList(newContentItem: Content): void {
+  this.contentService.addContent(newContentItem).subscribe(newContentFromServer => {
+  //  console.log("new content from server: ", newContentFromServer);
 
     this.contentList.push(newContentFromServer);
     this.contentList = [...this.contentList];
-  })
+  });
 }
 }

@@ -22,24 +22,9 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
 
   }
-/*
-  ngOnInit(): void {
-     this.contentService.getContentObs().subscribe(contentArray =>{
 
-    contentArray.forEach(function(item, i){
-      if(contentArray[i].id === 6){
-        contentArray.splice(i, 1);
-        contentArray.unshift(item);
-     //   console.log("item", item, "i=", i);
-      }
-    
-    })
-      return this.contentList = contentArray;
-    //  console.log('firstObservable', contentArray[0]);
 
-    })
-  }
-*/
+
   checkForTitle(searchValue: string): void{
     let searchList = this.contentList.filter(c=> c.title == searchValue);
     if (searchList.length > 0){

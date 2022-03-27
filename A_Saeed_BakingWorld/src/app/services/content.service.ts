@@ -17,7 +17,7 @@ export class ContentService {
 
  getContent(): Observable<Content[]>{ //get the content synchronously - not real world
    console.log("Getting the list")
-   return this.http.get<Content[]>("api/food");
+   return this.http.get<Content[]>("api/content");
  }
 
  addContent(newContentItem: Content): Observable<Content>{
