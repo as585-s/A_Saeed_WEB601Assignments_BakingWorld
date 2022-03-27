@@ -27,7 +27,7 @@ export class ContentService {
    return of(contentList);
  }
 
- getSingleMovie(id: number): Observable<Content>{
+ getSingleItem(id: number): Observable<Content>{
  /*   if (id <contentList.length && id >= 0){
      return of(contentList[id]);
    } else{
