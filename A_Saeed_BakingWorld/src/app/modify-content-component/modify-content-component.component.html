@@ -1,1 +1,24 @@
-<p>modify-content-component works!</p>
+<div></div>
+
+<div>
+    title: <input #title>
+</div>
+<div>
+    description: <input #description>
+</div>
+<div>
+    creator: <input #creator>
+</div>
+<div>
+    image: <input #imgURL>
+</div>
+<div>
+    type: <input #type>
+</div>
+<div>
+    tags: <input #tags>
+</div>
+<div>
+    <button (click)="addContent(title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Content Item</button>
+    
+</div>
