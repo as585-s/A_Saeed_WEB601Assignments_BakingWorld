@@ -18,7 +18,12 @@ export class InMemoryDataService implements InMemoryDbService {
     return {content};
   }
 
-  
+  //override the getID method that comes with the implemented service, to make use later
+
+  genId(content: Content[]): number {
+    return content.length > 0 ?
+    Math.max(...content.map(c => c.id)) + 1 : 2000;
+  }
 
   
 }
