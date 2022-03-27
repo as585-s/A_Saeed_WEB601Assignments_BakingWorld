@@ -7,7 +7,10 @@ import { contentList} from '../helper-files/contentDb';
 @Injectable({
   providedIn: 'root'
 })
+
 export class InMemoryDataService implements InMemoryDbService {
+
+  constructor() { }
 
   createDb(){
     //setting it to the value of our array of content
@@ -15,5 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
     return {content};
   }
 
-  constructor() { }
+  
+
+  
 }
