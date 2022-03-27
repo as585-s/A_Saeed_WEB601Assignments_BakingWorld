@@ -20,9 +20,7 @@ export class ContentListComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.contentService.getContentList().subscribe(list=>{
-      this.contentList = list;
-    })
+
   }
 /*
   ngOnInit(): void {
