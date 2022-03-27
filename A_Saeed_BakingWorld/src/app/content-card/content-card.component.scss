@@ -29,6 +29,10 @@
     border-width: 5px;
 }
 
+:host.single-item-on-app-component {
+    box-shadow: 5px 10px #88888899;
+}
+
 .image{
     width: 300px;
 }
