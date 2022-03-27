@@ -12,15 +12,21 @@ import { Content } from '../helper-files/content-interface';
 export class ContentListComponent implements OnInit {
   searchMessage: string = "";
   searchFlag: boolean = false;
-  contentItem: Content[] = [];
+ // contentItem: Content[] = [];
+  contentList: Content[];
   
   constructor(private contentService: ContentService) {
-
+    this.contentList = [];
    }
 
   ngOnInit(): void {
- 
-    this.contentService.getContentObs().subscribe(contentArray =>{
+    this.contentService.getContentList().subscribe(list=>{
+      this.contentList = list;
+    })
+  }
+/*
+  ngOnInit(): void {
+     this.contentService.getContentObs().subscribe(contentArray =>{
 
     contentArray.forEach(function(item, i){
       if(contentArray[i].id === 6){
@@ -30,14 +36,14 @@ export class ContentListComponent implements OnInit {
       }
     
     })
-      return this.contentItem = contentArray;
+      return this.contentList = contentArray;
     //  console.log('firstObservable', contentArray[0]);
 
     })
   }
-
+*/
   checkForTitle(searchValue: string): void{
-    let searchList = this.contentItem.filter(c=> c.title == searchValue);
+    let searchList = this.contentList.filter(c=> c.title == searchValue);
     if (searchList.length > 0){
       this.searchMessage = "Found the food item!";
       this.searchFlag = true;

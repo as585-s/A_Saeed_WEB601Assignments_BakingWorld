@@ -14,13 +14,40 @@ export class ContentService {
     getContent(): Content[]{
       return contentList;
     }
-*/
+
     //function that will retrieve the content array from the contentDb file
     //and return it using the observalbe pattern.
     getContentObs() : Observable<Content[]> {
       this.messageService.add('Content Array Loaded!');
       return of(contentList);
     }
-  
+  */
+ getContentList(): Observable<Content[]>{
+   this.messageService.add("Content array loaded");
+   return of(contentList);
+ }
+
+ getSingleMovie(id: number): Observable<Content>{
+ /*   if (id <contentList.length && id >= 0){
+     return of(contentList[id]);
+   } else{
+     this.messageService.add("id is invalid");
+   }
+*/
+  let filteredContentList: Content[] = contentList.filter(contentItem => contentItem.id === id);
+  //if the id is out of range, below 0 or above the length, the filter will return an empty array
+  if (filteredContentList.length){
+    this.messageService.add(`Content Item at id: ${id}`);
+    return of (filteredContentList[0]);
+  } else {
+    this.messageService.add("Invalid id number entered");
+    return of({
+      id: -1,
+      title: "Invalid id entered",
+      description: "n/a",
+      creator: "nobody"
+    });
+  }
+ }
 }
 
