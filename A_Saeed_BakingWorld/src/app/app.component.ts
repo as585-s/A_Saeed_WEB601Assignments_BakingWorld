@@ -17,6 +17,6 @@ export class AppComponent implements OnInit {
     this.mService.getSingleItem(1).subscribe(item => this.someItem = item);
   }
   displayContentItem(id: string): void{
-    this.mService.getSingleItem(parseInt(id)).subscribe(item => this.someItem = item));
+    this.mService.getSingleItem(parseInt(id)).subscribe(item => this.someItem = item);
   }
 }
