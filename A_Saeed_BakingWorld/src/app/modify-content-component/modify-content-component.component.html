@@ -1,4 +1,6 @@
-<div></div>
+<div>
+    id (ONLY FOR UPDATING): <input #id>
+</div>
 
 <div>
     title: <input #title>
@@ -20,5 +22,5 @@
 </div>
 <div>
     <button (click)="addContent(title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Content Item</button>
-    
+    <button (click)="updateContent(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Update Content Item</button>
 </div>

@@ -8,7 +8,7 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ModifyContentComponentComponent implements OnInit {
   @Output() newContentEvent: EventEmitter<Content> = new EventEmitter<Content>();
-
+  @Output() updateContentEvent: EventEmitter<Content> = new EventEmitter<Content>();
   newContent?: Content;
 
   constructor() { }
@@ -24,8 +24,20 @@ export class ModifyContentComponentComponent implements OnInit {
       imgURL: imgURL,
       type: type,
       tags: tags.split(",")
-    };
+    }
     this.newContentEvent.emit(this.newContent);
+  }
+  updateContent(id: string, title: string, desciption: string, creator: string, imgURL: string, type: string, tags: string): void{
+    this.newContent = {
+      id: parseInt(id),
+      title: title,
+      description: desciption,
+      creator: creator,
+      imgURL: imgURL,
+      type: type,
+      tags: tags.split(",")
+    }
+    this.updateContentEvent.emit(this.newContent);
   }
 
 }
