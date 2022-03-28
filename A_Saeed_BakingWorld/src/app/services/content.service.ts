@@ -16,12 +16,10 @@ export class ContentService {
   constructor(private http: HttpClient) {}
 
  getContent(): Observable<Content[]>{ //get the content synchronously - not real world
-   console.log("Getting the list")
    return this.http.get<Content[]>("api/content");
  }
 
  addContent(newContentItem: Content): Observable<Content>{
-   console.log("added the new content: ", newContentItem);
    return this.http.post<Content>("api/content", newContentItem, this.httpOptions);
  }
 
