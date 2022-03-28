@@ -1,4 +1,7 @@
 
 <app-modify-content-component newContentEvent="addContentToList($event)" (updateContentEvent)="updateContentInList($event)"></app-modify-content-component>
 
+<app-content-card *ngfor="let item of (contentList); index as i; last as isLast"
+[contentItem]="item" [class.is-last]="isLast"></app-content-card>
+
 
