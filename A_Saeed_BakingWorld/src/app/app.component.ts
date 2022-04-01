@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import {Content} from './helper-files/content-interface';
 import { ContentService } from './services/content.service';
@@ -10,34 +11,17 @@ import { ContentService } from './services/content.service';
 })
 export class AppComponent implements OnInit {
   title = 'A_Saeed_BakingWorld';
-  contentList: Content[];
+  someItem?: Content;
 
-  constructor(private contentService: ContentService){
-    this.contentList = [];
-
-  }
+  constructor(private mService: ContentService){ }
 
   ngOnInit(): void {
-    this.getContentFromServer();
+    this.mService.getSingleItem(1).subscribe(content => this.someItem = content);
 
 }
 
-getContentFromServer(): void{
-  this.contentService.getContent().subscribe(contentArray => this.contentList = contentArray);
+displayContentItem(id: string): void{
+  this.mService.getSingleItem(parseInt(id)).subscribe(content => this.someItem = content)
 }
 
-updateContentInList(contentItem: Content): void{
-  this.contentService.updateContent(contentItem).subscribe(() => {
-    this.getContentFromServer();
-  });
-}
-
-addContentToList(newContentItem: Content): void {
-  this.contentService.addContent(newContentItem).subscribe(newContentFromServer => {
-  //  console.log("new content from server: ", newContentFromServer);
-
-    this.contentList.push(newContentFromServer);
-    this.contentList = [...this.contentList];
-  });
-}
 }

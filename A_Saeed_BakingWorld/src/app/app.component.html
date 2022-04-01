@@ -1,7 +1,11 @@
 
-<app-modify-content-component newContentEvent="addContentToList($event)" (updateContentEvent)="updateContentInList($event)"></app-modify-content-component>
+<div>
+    <label>Select an id number to display: <input type="number" #id></label>
+</div>
+<app-content-card [contentItem]="someItem" class="single-item-on-app-component"></app-content-card>
 
-<app-content-card *ngfor="let item of (contentList); index as i; last as isLast"
-[contentItem]="item" [class.is-last]="isLast"></app-content-card>
+<app-content-list></app-content-list>
+
+<app-message></app-message>
 
 

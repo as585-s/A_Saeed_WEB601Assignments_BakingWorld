@@ -30,7 +30,7 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
-      delay: 500
+      delay: 3000
     })
   ],
   providers: [],
