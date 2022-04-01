@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { ContentService } from '../services/content.service';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-modify-content-component',
@@ -7,37 +9,61 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./modify-content-component.component.scss']
 })
 export class ModifyContentComponentComponent implements OnInit {
-  @Output() newContentEvent: EventEmitter<Content> = new EventEmitter<Content>();
-  @Output() updateContentEvent: EventEmitter<Content> = new EventEmitter<Content>();
-  newContent?: Content;
+  @Output() newContentEvent = new EventEmitter<Content>();
+ 
+  contentListForCheckingValidId: Content[] = [];
+  newContent: Content = {
+    title: "", description: '', creator: '', type: undefined
+  };
 
-  constructor() { }
+  tempId: string = "";
+  tempTags: string = '';
+  errorMessage: string = '';
+
+  constructor(private contentService:ContentService, private messageService: MessageService) { }
 
   ngOnInit(): void {
+    this.contentService.getContentList().subscribe(list => {
+      this.contentListForCheckingValidId = list;
+    });
   }
 
-  addContent(title: string, description: string, creator: string, imgURL: string, type: string, tags: string): void{
-    this.newContent = {
-      title: title,
-      description: description,
-      creator: creator,
-      imgURL: imgURL,
-      type: type,
-      tags: tags.split(",")
+  addContentFromChild(): void {
+    if (this.tempId === "") {
+      this.newContent.tags = this.tempTags.split(';');
+      this.contentService.addContent(this.newContent).subscribe((newContentFromServer) => {
+        this.messageService.add("Movie successfully adde to the server!");
+        this.newContentEvent.emit(newContentFromServer);
+      });
+
+      this.newContent = {
+          title: "", description: '', creator:'', type: undefined
+        };
+      
+        this.tempId = "";
+        this.tempTags = '';
+        //this.errorMessage= '';
+      }
+      else {
+      //  this.newContent.id = parseInt(this.tempId);
+        if(this.newContent.id !== undefined
+          && this.contentListForCheckingValidId.some(content => content.id === this.newContent.id)){
+            this.newContent.tags = this.tempTags.split(';');
+            this.contentService.updateContent(this.newContent).subscribe(() => {
+              this.messageService.add("Content successfully updated on the server!");
+              this.newContentEvent.emit(this.newContent);
+            });
+
+            this.newContent = {
+              title: "", description: '', creator:'', type: undefined
+            };
+            this.tempId = "";
+            this.tempTags = "";
+            //this.errorMessage = "";
+          }
+      }
+
     }
-    this.newContentEvent.emit(this.newContent);
-  }
-  updateContent(id: string, title: string, desciption: string, creator: string, imgURL: string, type: string, tags: string): void{
-    this.newContent = {
-      id: parseInt(id),
-      title: title,
-      description: desciption,
-      creator: creator,
-      imgURL: imgURL,
-      type: type,
-      tags: tags.split(",")
-    }
-    this.updateContentEvent.emit(this.newContent);
+
   }
 
-}

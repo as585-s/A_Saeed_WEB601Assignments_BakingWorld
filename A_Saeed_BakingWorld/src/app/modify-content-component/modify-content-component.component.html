@@ -1,26 +1,25 @@
 <div>
-    id (ONLY FOR UPDATING): <input #id>
+    ID: <input [(ngModel)]="tempId">
 </div>
 
 <div>
-    title: <input #title>
+    Title: <input [(ngModel)]="newContent.title">
 </div>
 <div>
-    description: <input #description>
+    Description: <input [(ngModel)]="newContent.description">
 </div>
 <div>
-    creator: <input #creator>
+    Creator: <input [(ngModel)]="newContent.creator">
 </div>
 <div>
-    image: <input #imgURL>
+    Image: <input [(ngModel)]="newContent.imgURL">
 </div>
 <div>
-    type: <input #type>
+    Type: <input [(ngModel)]="newContent.type">
 </div>
 <div>
-    tags: <input #tags>
+    Tags: <input [(ngModel)]="newContent.tags">
 </div>
 <div>
-    <button (click)="addContent(title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Content Item</button>
-    <button (click)="updateContent(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Update Content Item</button>
+    <button (click)="addContentFromChild()">{{tempId === "" ? "Add New Movie" : "Update existing movie"}}</button>
 </div>

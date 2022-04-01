@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import {Content} from '../helper-files/content-interface';
-import { Observable, of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MessageService } from './message.service';
@@ -20,8 +20,8 @@ export class ContentService {
    return this.http.get<Content[]>("api/content");
  }
 */
- addContent(newItem: Content): Observable<Content>{
-   return this.http.post<Content>("api/content", newItem, this.httpOptions);
+ addContent(newContent: Content): Observable<Content>{
+   return this.http.post<Content>("api/content", newContent, this.httpOptions);
  }
 
  updateContent(contentItem: Content): Observable<any>{

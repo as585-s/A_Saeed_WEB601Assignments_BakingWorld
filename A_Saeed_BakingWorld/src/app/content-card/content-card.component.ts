@@ -12,12 +12,9 @@ export class ContentCardComponent implements OnInit {
   @Input() contentItem?: Content;
   
 
-  constructor() {
+  constructor() { }
 
-   }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   imageClicked(): void{
     console.log("ID: ", this.contentItem?.id, ", Title: ", this.contentItem?.title);

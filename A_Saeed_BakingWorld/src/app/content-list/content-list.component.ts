@@ -20,6 +20,9 @@ export class ContentListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.contentService.getContentList().subscribe(list =>{
+      this.contentList = list;
+    })
 
   }
 
@@ -34,5 +37,13 @@ export class ContentListComponent implements OnInit {
       this.searchMessage = "No food item with that title";
       this.searchFlag = false;
     }
+  }
+  addContentToList(newContentItem: Content): void{
+    //this.contentList.push(newContentItem);
+    // this.contentList = [...this.contentList]
+
+    this.contentService.getContentList().subscribe(list => {
+      this.contentList = list;
+    });
   }
 }

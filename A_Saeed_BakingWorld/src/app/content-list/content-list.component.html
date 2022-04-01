@@ -1,27 +1,11 @@
-<app-modify-content-component></app-modify-content-component>
+<app-modify-content-component (newContentEvent)="addContentToList($event)"></app-modify-content-component>
 <div class="search">
     <input #search>
     <button (click) = "checkForTitle(search.value)">Check for Title</button>
     <h4 class="success" *ngIf="searchFlag">Title found</h4>
     <h4 class="fail" *ngIf="!searchFlag">Title not found</h4>
 </div>
-<!--
-<app-content-card appHoverAffect elementType="card" [firstOrLast]="isFirstContentOnList || isLast"
-*ngFor="let item of (contentItem | typewithvalueFilter); first as isFirstContentOnList; last as isLast"
-[class.first-content]="isFirstContentOnList" [contentItem]="item" class="notype" [class.found]="item.title == search.value"></app-content-card>
 
-<app-content-card appHoverAffect elementType="card" [firstOrLast]="isFirstContentOnList || isLast"
-*ngFor="let item of (contentItem | typewithvalueFilter: 'Bread'); first as isFirstContentOnList; last as isLast"
-[class.first-content]="isFirstContentOnList" [contentItem]="item" class="bread" [class.found]="item.title == search.value"></app-content-card>
-
-<app-content-card appHoverAffect elementType="card" [firstOrLast]="isFirstContentOnList || isLast"
-*ngFor="let item of (contentItem | typewithvalueFilter: 'Meat'); first as isFirstContentOnList; last as isLast"
-[class.first-content]="isFirstContentOnList" [contentItem]="item" class="meat" [class.found]="item.title == search.value"></app-content-card>
-
-<app-content-card appHoverAffect elementType="card" [firstOrLast]="isFirstContentOnList || isLast"
-*ngFor="let item of (contentItem | typewithvalueFilter: 'Vegetable'); first as isFirstContentOnList; last as isLast"
-[class.first-content]="isFirstContentOnList" [contentItem]="item" class="vegetable" [class.found]="item.title == search.value"></app-content-card>
--->
 <app-content-card appHoverAffect elementType="card" [firstOrLast]="isFirstContentOnList || isLast"
 *ngFor="let item of (contentList | typewithvalueFilter); first as isFirstContentOnList; last as isLast"
 [class.first-content]="isFirstContentOnList" [contentItem]="item" class="notype" [class.found]="item.title == search.value"></app-content-card>
