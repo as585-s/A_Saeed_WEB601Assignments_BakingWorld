@@ -16,12 +16,12 @@ export class AppComponent implements OnInit {
   constructor(private mService: ContentService){ }
 
   ngOnInit(): void {
-    this.mService.getSingleItem(1).subscribe(content => this.someItem = content);
+    this.mService.getSingleContent(1).subscribe(content => this.someItem = content);
 
 }
 
 displayContentItem(id: string): void{
-  this.mService.getSingleItem(parseInt(id)).subscribe(content => this.someItem = content)
+  this.mService.getSingleContent(parseInt(id)).subscribe(content => this.someItem = content)
 }
 
 }

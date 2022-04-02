@@ -32,7 +32,7 @@ export class ModifyContentComponentComponent implements OnInit {
     if (this.tempId === "") {
       this.newContent.tags = this.tempTags.split(';');
       this.contentService.addContent(this.newContent).subscribe((newContentFromServer) => {
-        this.messageService.add("Movie successfully adde to the server!");
+        this.messageService.add("Food Item successfully added to the server!");
         this.newContentEvent.emit(newContentFromServer);
       });
 
@@ -45,7 +45,7 @@ export class ModifyContentComponentComponent implements OnInit {
         //this.errorMessage= '';
       }
       else {
-      //  this.newContent.id = parseInt(this.tempId);
+        this.newContent.id = parseInt(this.tempId)
         if(this.newContent.id !== undefined
           && this.contentListForCheckingValidId.some(content => content.id === this.newContent.id)){
             this.newContent.tags = this.tempTags.split(';');

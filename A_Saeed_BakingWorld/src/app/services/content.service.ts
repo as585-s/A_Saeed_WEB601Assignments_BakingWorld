@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-
-import {Content} from '../helper-files/content-interface';
 import { of, Observable } from 'rxjs';
-
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Content} from '../helper-files/content-interface';
 import { MessageService } from './message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class ContentService {
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-type': 'application/json' })
-  }
+  };
   constructor(private messageService: MessageService, private http: HttpClient) {}
 /*
  getContent(): Observable<Content[]>{ //get the content synchronously - not real world
@@ -21,11 +20,12 @@ export class ContentService {
  }
 */
  addContent(newContent: Content): Observable<Content>{
+   this.messageService.add("Going to add food item to the server!");
    return this.http.post<Content>("api/content", newContent, this.httpOptions);
  }
 
- updateContent(contentItem: Content): Observable<any>{
-   return this.http.put("api/content", contentItem, this.httpOptions);
+ updateContent(oldContent: Content): Observable<any>{
+   return this.http.put("api/content", oldContent, this.httpOptions);
  }
 
  getContentList(): Observable<Content[]>{
@@ -33,7 +33,7 @@ export class ContentService {
    return this.http.get<Content[]>("api/content")
  }
 
- getSingleItem(id:number): Observable<Content>{
+ getSingleContent(id:number): Observable<Content>{
    return this.http.get<Content>("api/content/" +id);
  }
 }

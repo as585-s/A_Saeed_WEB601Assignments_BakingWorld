@@ -8,7 +8,7 @@ import { Content } from '../helper-files/content-interface';
 })
 
 export class InMemoryDataService implements InMemoryDbService {
-  CONTENTLIST: Content[] = [{
+  contentList: Content[] = [{
     id: 0,
     title: "Homemade Bread",
     description: "Home baked bread",
@@ -72,15 +72,15 @@ export class InMemoryDataService implements InMemoryDbService {
 
   createDb(){
     //setting it to the value of our array of content
-    const content = this.CONTENTLIST;
+    const content = this.contentList;
     return {content};
   }
 
   //override the getID method that comes with the implemented service, to make use later
 
   genId(contentList: Content[]): number {
-    return contentList.length > 0 ?
-    Math.max(...contentList.map(c => c.id ?? 0)) + 1 : 0;
+    return contentList.length > 0 ? Math.max(...contentList.map(c => 
+      c.id ?? 0)) + 1 : 0;
   }
 
   

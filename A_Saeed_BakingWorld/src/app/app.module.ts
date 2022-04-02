@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -29,10 +28,11 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, 
+    {
       dataEncapsulation: false,
-      delay: 3000
-    })
+      delay: 3000,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
