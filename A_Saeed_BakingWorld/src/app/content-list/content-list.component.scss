@@ -2,10 +2,22 @@
 :host{
     display: block;
     width: 400px;
+    height: 300px;
     margin: 16px auto;
     border: 2px solid black;
 }
 */
+.search {
+    display: block;
+    width: 400px;
+    height: 100px;
+    margin: 16px auto;
+    border: 2px solid black;
+}
+
+.titlesearch {
+    border: 1px solid gray;
+}
 
 .fail{
     color: red;
