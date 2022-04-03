@@ -2,7 +2,7 @@
 
 <div class="search">
     <input #search>
-    <button (click) = "checkForTitle(search.value)">Check for Title</button>
+    <button mat-raised-button (click) = "checkForTitle(search.value)">Check for Title</button>
     <h4 class="success" *ngIf="searchFlag">Title found</h4>
     <h4 class="fail" *ngIf="!searchFlag">Title not found</h4>
 </div>

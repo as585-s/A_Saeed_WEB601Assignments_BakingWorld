@@ -32,13 +32,14 @@ export class ContentListComponent implements OnInit {
   checkForTitle(searchValue: string): void{
     let searchList = this.contentList.filter(c=> c.title == searchValue);
     if (searchList.length > 0){
-      this.searchMessage = "Found the food item!";
+    //  this.searchMessage = "Found the food item!";
       this.searchFlag = true;
     } else {
-      this.searchMessage = "No food item with that title";
+    //  this.searchMessage = "No food item with that title";
       this.searchFlag = false;
     }
   }
+
   addContentToList(newContentItem: Content): void{
     //this.contentList.push(newContentItem);
     // this.contentList = [...this.contentList]
