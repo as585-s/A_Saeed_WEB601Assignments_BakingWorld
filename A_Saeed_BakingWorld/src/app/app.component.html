@@ -1,7 +1,12 @@
 
-<div>
-    <label>Select an id number to display: <input type="number" #id></label>
-    <button (click)="displayContentItem(id.value)">Display Content Item</button>
+<div class="container">
+    <div class="search">
+        <mat-form-field>
+        <mat-label>Select an id number to display: </mat-label>
+        <input matInput type="number" #id>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="displayContentItem(id.value)">Display Content Item</button>
 </div>
 <app-content-card [contentItem]="someItem" class="single-item-on-app-component"></app-content-card>
 

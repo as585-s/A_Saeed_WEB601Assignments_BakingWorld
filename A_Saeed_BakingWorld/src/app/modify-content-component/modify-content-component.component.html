@@ -1,25 +1,55 @@
-<div>
-    ID: <input [(ngModel)]="tempId">
-</div>
+<div class="container">
+    <div>
+        ID:
+        <mat-form-field appearance="outline">
+            <mat-label>ID</mat-label>
+            <input matInput [(ngModel)]="tempId">
+        </mat-form-field>
+    </div>
 
-<div>
-    Title: <input [(ngModel)]="newContent.title">
-</div>
-<div>
-    Description: <input [(ngModel)]="newContent.description">
-</div>
-<div>
-    Creator: <input [(ngModel)]="newContent.creator">
-</div>
-<div>
-    Image: <input [(ngModel)]="newContent.imgURL">
-</div>
-<div>
-    Type: <input [(ngModel)]="newContent.type">
-</div>
-<div>
-    Tags: <input [(ngModel)]="newContent.tags">
-</div>
-<div>
-    <button (click)="addContentFromChild()">{{tempId === "" ? "Add New Food Item" : "Update existing food item"}}</button>
+    <div>
+        Title: 
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="newContent.title">
+        </mat-form-field>
+    </div>
+    <div>
+        Description: 
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="newContent.description">
+        </mat-form-field>
+    </div>
+    <div>
+        Creator: 
+        <mat-form-field appearance="outline">
+            <mat-label>Creator</mat-label>
+            <input matInput [(ngModel)]="newContent.creator">
+        </mat-form-field>
+    </div>
+    <div>
+        Image: 
+        <mat-form-field appearance="outline">
+            <mat-label>Image</mat-label>
+            <input matInput [(ngModel)]="newContent.imgURL">
+        </mat-form-field>
+    </div>
+    <div>
+        Type: 
+        <mat-form-field appearance="outline">
+            <mat-label>Type</mat-label>
+            <input matInput [(ngModel)]="newContent.type">
+        </mat-form-field>
+    </div>
+    <div>
+        Tags: 
+        <mat-form-field appearance="outline">
+            <mat-label>Tags</mat-label>
+            <input matInput [(ngModel)]="newContent.tags">
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-raised-button (click)="addContentFromChild()">{{tempId === "" ? "Add New Food Item" : "Update existing food item"}}</button>
+    </div>
 </div>
