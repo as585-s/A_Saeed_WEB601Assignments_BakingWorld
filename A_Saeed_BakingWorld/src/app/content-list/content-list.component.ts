@@ -1,8 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { ContentService } from './../services/content.service';
-
 
 
 @Component({
@@ -15,9 +13,10 @@ export class ContentListComponent implements OnInit {
   searchFlag: boolean = false;
  // contentItem: Content[] = [];
   contentList: Content[];
-  
+
+    
   constructor(private contentService: ContentService) {
-    this.contentList = [];
+    this.contentList = [];  
    }
 
   ngOnInit(): void {
@@ -27,9 +26,7 @@ export class ContentListComponent implements OnInit {
 
   }
 
-
-
-  checkForTitle(searchValue: string): void{
+   checkForTitle(searchValue: string): void{
     let searchList = this.contentList.filter(c=> c.title == searchValue);
     if (searchList.length > 0){
     //  this.searchMessage = "Found the food item!";
@@ -49,3 +46,7 @@ export class ContentListComponent implements OnInit {
     });
   }
 }
+function openDialog() {
+  throw new Error('Function not implemented.');
+}
+

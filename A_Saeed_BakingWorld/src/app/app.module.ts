@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MessageComponent,
     ModifyContentComponentComponent
   ],
+  
   imports: [
     BrowserModule,
     FormsModule,

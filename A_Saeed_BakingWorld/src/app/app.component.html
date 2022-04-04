@@ -6,9 +6,11 @@
         <input matInput type="number" #id>
         </mat-form-field>
     </div>
-    <button mat-raised-button (click)="displayContentItem(id.value)">Display Content Item</button>
+    <button mat-raised-button (click)="displayContentItem(id.value)">Display Food Item</button>
 </div>
 <app-content-card [contentItem]="someItem" class="single-item-on-app-component"></app-content-card>
+
+<button mat-raised-button click="openDialog()">Open Dialog</button>
 
 <app-content-list></app-content-list>
 
