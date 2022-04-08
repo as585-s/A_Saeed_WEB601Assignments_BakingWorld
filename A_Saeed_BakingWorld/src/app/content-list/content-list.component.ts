@@ -45,8 +45,11 @@ export class ContentListComponent implements OnInit {
       this.contentList = list;
     });
   }
+
+ 
 }
+/*
 function openDialog() {
   throw new Error('Function not implemented.');
 }
-
+*/
