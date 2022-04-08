@@ -1,16 +1,44 @@
-<h3 class="title">
-    {{contentItem?.title}}
-</h3>
-<img (click)="imageClicked()" *ngIf="contentItem?.imgURL" class="image" [src]="contentItem?.imgURL">
-<img (click)="imageClicked()" *ngIf="!contentItem?.imgURL" class="image"
-    src="https://image.shutterstock.com/z/stock-photo-group-picture-of-chinese-cuisine-653854594.jpg">
-<!--
+<mat-card *ngIf="contentItem">
+    <mat-card-header>
+        <mat-card-title>
+            {{ contentItem?.title}} - {{ contentItem?.creator}}
+        </mat-card-title>
+        <mat-card-subtitle appHoverAffect elementType="type" *ngIf="contentItem?.type" class="contentItem?.type">
+            {{ contentItem?.type}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image (click)="imageClicked()" *ngIf="contentItem?.imgURL" class="image" [src]="contentItem?.imgURL">
+    <img mat-card-image (click)="imageClicked()" *ngIf="!contentItem.imgURL" class="image"
+        src="https://image.shutterstock.com/z/stock-photo-group-picture-of-chinese-cuisine-653854594.jpg">
+    <mat-card-content>
+        <p>
+            {{ contentItem?.description}}
+        </p>
+        <mat-chip-list aria-label="Tags of the content" *ngIf="contentItem?.tags">
+            <mat-chip appHoverAffect elementType="tag" *ngFor="let tag of contentItem?.tags">
+                #{{ tag }}
+            </mat-chip>
+        </mat-chip-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <app-modify-content-component [newContent]="contentItem"></app-modify-content-component>
+    </mat-card-actions>
+</mat-card>
+
+,!--
 <img (click)="imageClicked()" *ngIf="contentItem?.imgURL; else noImage" 
  class="image" [src]="contentItem?.imgURL">
  <ng-template #noImage>
     <img class="image" src = "https://image.shutterstock.com/z/stock-photo-group-picture-of-chinese-cuisine-653854594.jpg">
  </ng-template>
---> 
+-->
+
+<!-- <h3 class="title">
+    {{contentItem?.title}}
+</h3>
+<img (click)="imageClicked()" *ngIf="contentItem?.imgURL" class="image" [src]="contentItem?.imgURL">
+<img (click)="imageClicked()" *ngIf="!contentItem?.imgURL" class="image"
+    src="https://image.shutterstock.com/z/stock-photo-group-picture-of-chinese-cuisine-653854594.jpg">
  <p> Description: {{ contentItem?.description}}</p>
 
 <div class="meta-data">
@@ -26,4 +54,5 @@
             #{{tag}}
         </span>   
     </div>
-</div>
+</div> -->
+
