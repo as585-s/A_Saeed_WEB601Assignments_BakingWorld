@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
 }
 
-displayContentItem(id: string): void{
+displayFoodItem(id: string): void{
   this.mService.getSingleContent(parseInt(id)).subscribe(content => this.someItem = content)
 }
 
