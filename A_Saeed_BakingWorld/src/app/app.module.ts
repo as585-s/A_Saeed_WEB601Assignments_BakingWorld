@@ -15,6 +15,8 @@ import { DialogOverviewExampleDialog, ModifyContentComponentComponent } from './
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     HoverAffectDirective,
     MessageComponent,
     ModifyContentComponentComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   
   imports: [
@@ -36,7 +40,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, 
     {
       dataEncapsulation: false,
-      delay: 3000,
+    //  delay: 3000,
     }),
     BrowserAnimationsModule,
     MaterialModule,

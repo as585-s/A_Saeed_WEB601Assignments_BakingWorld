@@ -11,9 +11,11 @@ import { ContentService } from './services/content.service';
 })
 export class AppComponent implements OnInit {
   title = 'A_Saeed_BakingWorld';
-  someItem?: Content;
+  contentItem: Content;
 
-  constructor(private mService: ContentService){ }
+  constructor(private mService: ContentService){
+    this.contentItem = {id: 0, title: '', description: '', creator: '', imgURL: ''};
+   }
 
   ngOnInit(): void {
  //  this.mService.getSingleContent(1).subscribe(content => this.someItem = content);
@@ -21,7 +23,7 @@ export class AppComponent implements OnInit {
 }
 
 displayFoodItem(id: string): void{
-  this.mService.getSingleContent(parseInt(id)).subscribe(content => this.someItem = content)
+  this.mService.getSingleContent(parseInt(id)).subscribe(content => this.contentItem = content)
 }
 
 }

@@ -1,0 +1,10 @@
+<div *ngIf="contentItem" class="content-{{contentItem.id}}">
+    <div class="title">{{ contentItem.title}}</div>
+    <div class="creator">{{ contentItem.creator}}</div>
+    <div class="image">{{ contentItem.imgURL}}</div>
+    <div class="type">{{ contentItem.type}}</div>
+    <div class="tags">
+        <span class="tag" *ngFor="let tag of contentItem.tags">{{ tag }}</span>
+    </div>
+</div>
+

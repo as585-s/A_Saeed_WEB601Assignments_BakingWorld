@@ -9,10 +9,13 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-  @Input() contentItem?: Content;
+  @Input() contentItem: Content;
   
 
-  constructor() { }
+  constructor() {
+    
+    this.contentItem = {id: 0, title: '', description: '', creator: '', imgURL: ''};
+   };
 
   ngOnInit(): void { }
 

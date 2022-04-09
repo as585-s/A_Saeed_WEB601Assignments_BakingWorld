@@ -25,6 +25,10 @@
     </mat-card-actions>
 </mat-card>
 
+<a [routerLink]="['/content', contentItem?.id]" routerLinkActive="active">
+    Content Details
+</a>
+
 <!--
 <img (click)="imageClicked()" *ngIf="contentItem?.imgURL; else noImage" 
  class="image" [src]="contentItem?.imgURL">

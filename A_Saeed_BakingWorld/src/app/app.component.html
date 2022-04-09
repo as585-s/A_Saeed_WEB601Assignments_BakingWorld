@@ -1,3 +1,4 @@
+<!--
 <div>
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Select an id number to display</mat-label>
@@ -6,6 +7,10 @@
     <button mat-flat-button color="accent" (click)="displayFoodItem(id.value)">Display Food Item</button>
 </div>
 
+<app-content-card [contentItem]="contentItem" class="single-item-on-app-component"></app-content-card>
+
+<button mat-raised-button click="openDialog()">Open Dialog</button>
+-->
 
 <!--
 <div class="container">
@@ -21,11 +26,23 @@
 
 <button mat-raised-button click="openDialog()">Open Dialog</button>
 -->
+<app-content-detail></app-content-detail>
+
+
+<a routerLink="content" routerLinkActive="active"
+ [routerLinkActiveOptions]="{ exact: true}">Content List</a><br>
+
+ <a routerLink="pagewillnotbefound" routerLinkActive="active">
+     Invalid page link
+ </a>
+ <router-outlet></router-outlet>
+
 
 <mat-divider></mat-divider>
 <app-content-list></app-content-list>
 <app-message></app-message>
 
-<router-outlet></router-outlet>
+
+
 
 
