@@ -14,6 +14,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { DialogOverviewExampleDialog, ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MaterialModule } from './material/material.module';
       delay: 3000,
     }),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
