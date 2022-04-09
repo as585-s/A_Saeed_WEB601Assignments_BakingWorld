@@ -33,7 +33,7 @@ export class ContentService {
    return this.http.get<Content[]>("api/content")
  }
 
- getSingleContent(id:number): Observable<Content>{
+ getSingleContent(id: number): Observable<Content>{
    return this.http.get<Content>("api/content/" +id);
  }
 }
