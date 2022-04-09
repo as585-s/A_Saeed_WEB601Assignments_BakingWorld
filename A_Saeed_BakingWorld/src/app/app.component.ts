@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private mService: ContentService){ }
 
   ngOnInit(): void {
-    this.mService.getSingleContent(1).subscribe(content => this.someItem = content);
+ //  this.mService.getSingleContent(1).subscribe(content => this.someItem = content);
 
 }
 

@@ -29,12 +29,13 @@ export class ContentService {
  }
 
  getContentList(): Observable<Content[]>{
-   this.messageService.add("Content array loaded");
+//   this.messageService.add("Content array loaded");
    return this.http.get<Content[]>("api/content")
  }
 
  getSingleContent(id: number): Observable<Content>{
    this.messageService.add(`Content Item at id: ${id}`);
-   return this.http.get<Content>("api/content/" +id);
+   return this.http.get<Content>("api/content/" + id);
  }
+ 
 }
