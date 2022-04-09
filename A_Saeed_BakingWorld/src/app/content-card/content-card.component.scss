@@ -5,7 +5,7 @@
   //  padding: 8px;
     width: 500px;
     text-align: center;
-}
+
 
 mat-card {
     border: 1px solid #0000ff;
@@ -38,6 +38,7 @@ mat-card {
 
 &.single-item-on-app-component mat-card {
     box-shadow: 5px 10px #88888899;
+}
 }
 
 /*

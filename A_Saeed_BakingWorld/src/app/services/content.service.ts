@@ -34,6 +34,7 @@ export class ContentService {
  }
 
  getSingleContent(id: number): Observable<Content>{
+   this.messageService.add(`Content Item at id: ${id}`);
    return this.http.get<Content>("api/content/" +id);
  }
 }
