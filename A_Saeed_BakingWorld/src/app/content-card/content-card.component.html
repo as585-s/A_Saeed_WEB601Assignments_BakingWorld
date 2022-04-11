@@ -1,3 +1,4 @@
+<app-content-detail></app-content-detail>
 <mat-card *ngIf="contentItem">
     <mat-card-header>
         <mat-card-title>
@@ -25,9 +26,11 @@
     </mat-card-actions>
 </mat-card>
 
+
 <a [routerLink]="['/content', contentItem?.id]" routerLinkActive="active">
     Content Details
 </a>
+
 
 <!--
 <img (click)="imageClicked()" *ngIf="contentItem?.imgURL; else noImage" 

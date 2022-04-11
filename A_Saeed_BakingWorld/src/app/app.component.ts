@@ -14,11 +14,11 @@ export class AppComponent implements OnInit {
   contentItem: Content;
 
   constructor(private mService: ContentService){
-    this.contentItem = {id: 0, title: '', description: '', creator: '', imgURL: ''};
+    this.contentItem = { id: 0, title: '', description: '', creator: '', imgURL: ''};
    }
 
   ngOnInit(): void {
- //  this.mService.getSingleContent(1).subscribe(content => this.someItem = content);
+   this.mService.getSingleContent(1).subscribe(content => this.contentItem = content);
 
 }
 
