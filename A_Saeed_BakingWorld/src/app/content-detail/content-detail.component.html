@@ -1,3 +1,28 @@
+<h3 class="title">
+    {{ contentItem?.title }}
+</h3>
+<img *ngIf="contentItem?.imgURL" class="image" [src]="contentItem?.imgURL">
+
+<p>
+    {{ contentItem?.description}}
+</p>
+<div class="meta-data">
+    <div class="creator">
+        {{ contentItem?.creator}}
+    </div>
+    <div *ngIf="contentItem?.type" class="contentItem?.type">
+        {{ contentItem?.type}}
+    </div>
+    <div class="tags" *ngIf="contentItem?.tags">
+        <span class="tag" *ngFor="let tag of contentItem?.tags">
+            #{{ tag}}
+        </span>
+    </div>
+</div>
+<p>
+    <a mat-raised-button color="primary" routerLink="/list">Back to the List</a>
+</p>
+<!--
 <div *ngIf="contentItem" class="content-{{contentItem.id}}">
     <div class="title">{{ contentItem.title}}</div>
     <div class="creator">{{ contentItem.creator}}</div>
@@ -7,4 +32,4 @@
         <span class="tag" *ngFor="let tag of contentItem.tags">{{ tag }}</span>
     </div>
 </div>
-
+-->
