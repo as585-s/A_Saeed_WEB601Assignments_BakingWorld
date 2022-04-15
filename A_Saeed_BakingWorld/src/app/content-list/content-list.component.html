@@ -1,4 +1,4 @@
-
+<a mat-flat-button color="warn" routerLink="/dontClickthelink">Don't click this link!</a>
 
 
 <app-modify-content-component (newContentEvent)="addContentToList($event)"></app-modify-content-component>
@@ -14,11 +14,11 @@
     <h4 class="success" *ngIf="searchFlag">Title found</h4>
     <h4 class="fail" *ngIf="!searchFlag">Title not found</h4>
 </div>
-
-<app-content-card *ngFor="let item of contentList;" [contentItem]="item" [class.found]="item.title == search.value"></app-content-card>
-
-
 <!--
+<app-content-card *ngFor="let item of contentList;" [contentItem]="item" [class.found]="item.title == search.value"></app-content-card>
+-->
+
+
 <app-content-card appHoverAffect elementType="card" [firstOrLast]="isFirstContentOnList || isLast"
 *ngFor="let item of (contentList | typewithvalueFilter); first as isFirstContentOnList; last as isLast"
 [class.first-content]="isFirstContentOnList" [contentItem]="item" class="notype" [class.found]="item.title == search.value"></app-content-card>
@@ -34,4 +34,3 @@
 <app-content-card appHoverAffect elementType="card" [firstOrLast]="isFirstContentOnList || isLast"
 *ngFor="let item of (contentList | typewithvalueFilter: 'Vegetable'); first as isFirstContentOnList; last as isLast"
 [class.first-content]="isFirstContentOnList" [contentItem]="item" class="vegetable" [class.found]="item.title == search.value"></app-content-card>
--->
