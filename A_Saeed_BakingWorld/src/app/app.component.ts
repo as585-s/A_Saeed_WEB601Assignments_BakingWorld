@@ -11,19 +11,17 @@ import { ContentService } from './services/content.service';
 })
 export class AppComponent implements OnInit {
   title = 'A_Saeed_BakingWorld';
-  contentItem: Content;
+  someItem?: Content;
 
-  constructor(private mService: ContentService){
-    this.contentItem = { id: 0, title: '', description: '', creator: '', imgURL: ''};
-   }
+  constructor(private mService: ContentService){  }
 
   ngOnInit(): void {
-   this.mService.getSingleContent(1).subscribe(content => this.contentItem = content);
+   this.mService.getSingleContent(1).subscribe(contentItem => this.someItem = contentItem);
 
 }
 
 displayFoodItem(id: string): void{
-  this.mService.getSingleContent(parseInt(id)).subscribe(content => this.contentItem = content)
+  this.mService.getSingleContent(parseInt(id)).subscribe(contentItem => this.someItem = contentItem)
 }
 
 }
