@@ -12,9 +12,9 @@
     <img mat-card-image (click)="imageClicked()" *ngIf="!contentItem.imgURL" class="image"
         src="https://image.shutterstock.com/z/stock-photo-group-picture-of-chinese-cuisine-653854594.jpg">
     <mat-card-content>
-        <p>
+    <!--<p>
             {{ contentItem?.description}}
-        </p>
+        </p> -->
         <mat-chip-list aria-label="Tags of the content" *ngIf="contentItem?.tags">
             <mat-chip appHoverAffect elementType="tag" *ngFor="let tag of contentItem?.tags">
                 #{{ tag }}
@@ -22,14 +22,16 @@
         </mat-chip-list>
     </mat-card-content>
     <mat-card-actions>
+        <a mat-raised-button color="accent" routerLink="/list/{{contentItem.id}}">Details</a>
         <app-modify-content-component [newContent]="contentItem"></app-modify-content-component>
     </mat-card-actions>
 </mat-card>
 
-
+<!--
 <a [routerLink]="['/content', contentItem?.id]" routerLinkActive="active">
     Content Details
 </a>
+-->
 
 
 <!--
