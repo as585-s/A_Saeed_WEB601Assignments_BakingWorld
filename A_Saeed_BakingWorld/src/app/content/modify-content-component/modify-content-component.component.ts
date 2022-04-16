@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Content } from '../helper-files/content-interface';
-import { ContentService } from '../services/content.service';
-import { MessageService } from '../services/message.service';
+import { Content } from '../../helper-files/content-interface';
+import { ContentService } from '../../services/content.service';
+import { MessageService } from '../../services/message.service';
 
 export interface DialogData {
   newContent: Content;

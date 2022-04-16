@@ -1,7 +1,5 @@
-import { ContentDetailComponent } from './../content-detail/content-detail.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
-import { ContentListComponent } from '../content-list/content-list.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 
@@ -14,23 +12,18 @@ const routes: Routes = [
   },
   {
     path: "list",
-    component: ContentListComponent
+    loadChildren: () => import('../content/content.module').then(m => m.ContentModule)
   },
   {
-    path: "list/:id",
-    component: ContentDetailComponent
+    path: "**",
+    component: PageNotFoundComponent,
   },
- // {
- //   path: "**",
- //   component: PageNotFoundComponent,
-//  },
  ];
 
 @NgModule({
   declarations: [],
   imports: [
     [RouterModule.forRoot(routes)]
-    
   ],
   exports: [RouterModule]
 })

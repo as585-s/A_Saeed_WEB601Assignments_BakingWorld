@@ -1,8 +1,8 @@
-import { ContentService } from './../services/content.service';
+import { ContentService } from '../../services/content.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Content } from '../helper-files/content-interface';
-import { MessageService } from '../services/message.service';
+import { Content } from '../../helper-files/content-interface';
+import { MessageService } from '../../services/message.service';
 
 
 @Component({
