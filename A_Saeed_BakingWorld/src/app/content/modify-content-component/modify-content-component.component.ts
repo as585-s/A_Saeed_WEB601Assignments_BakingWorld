@@ -41,7 +41,7 @@ export class ModifyContentComponentComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: DialogData) => {
-      console.log('The dialog was  closed', result);
+   //   console.log('The dialog was  closed', result);
       this.newContent = result.newContent;
       this.tempTags = result.tempTags;
       this.addContentFromChild();
