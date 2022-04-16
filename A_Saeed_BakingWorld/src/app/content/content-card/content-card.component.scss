@@ -9,25 +9,9 @@
 
 .mat-card {
     border: 1px solid #0000ff;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-mat-card-header{
-    align-items: center;
-    justify-content: center;
-}
-
-.mat-card> .mat-card-content{
-    align-items: center;
-    justify-content: center;
-}
-
-.mat-chip-list {
-    align-items: center;
-    justify-content: center;
-}
-
-.mat-card-image {
     justify-content: center;
 }
 
@@ -89,8 +73,6 @@ mat-card-header{
 */
 .mat-card-image{
     width: 300px; 
-    margin: 0 auto;
-    
 }
 
 .tag{
