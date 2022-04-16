@@ -10,7 +10,7 @@ import { ContentService } from '../../services/content.service';
 })
 export class ContentListComponent implements OnInit {
   searchMessage: string = "";
-  searchFlag: boolean = false;
+  searchFlag?: boolean;
  // contentItem: Content[] = [];
   contentList: Content[];
 
