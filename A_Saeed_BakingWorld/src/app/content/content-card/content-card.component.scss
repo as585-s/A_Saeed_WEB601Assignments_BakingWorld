@@ -7,8 +7,28 @@
     text-align: center;
 
 
-mat-card {
+.mat-card {
     border: 1px solid #0000ff;
+    align-items: center;
+    justify-content: center;
+}
+mat-card-header{
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-card> .mat-card-content{
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-chip-list {
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-card-image {
+    justify-content: center;
 }
 
 &.first-contentItem mat-card {
@@ -67,8 +87,9 @@ mat-card {
     box-shadow: 5px 10px #88888899;
 }
 */
-.image{
-    width: 300px;
+.mat-card-image{
+    width: 300px; 
+    margin: 0 auto;
     
 }
 
