@@ -9,6 +9,10 @@
 
 mat-card {
     border: 1px solid #0000ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 &.first-contentItem mat-card {
