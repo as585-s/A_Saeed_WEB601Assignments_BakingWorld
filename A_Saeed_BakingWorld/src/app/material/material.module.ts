@@ -13,8 +13,10 @@ const MaterialComponents = [
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
+  MatInputModule,
   MatDialogModule,
   MatChipsModule,
+  MatDialogModule,
   MatBadgeModule
  ]
 
