@@ -7,7 +7,7 @@ import { Content } from './helper-files/content-interface';
 export class TypewithvalueFilterPipe implements PipeTransform {
 
   transform(contentList: Content[], filterByThisType?: string): Content[] {
-    console.log("filter value: ", filterByThisType);
+  //  console.log("filter value: ", filterByThisType);
    // return contentList.filter(f => f.type == filterByThisType);
 
    return contentList.filter(c=>{

@@ -21,11 +21,11 @@ export class ContentService {
 */
  addContent(newContent: Content): Observable<Content>{
    this.messageService.add("Going to add food item to the server!");
-   return this.http.post<Content>("api/content", newContent, this.httpOptions);
+   return this.http.post<Content>("api/contentItem", newContent, this.httpOptions);
  }
 
  updateContent(oldContent: Content): Observable<any>{
-   return this.http.put("api/content", oldContent, this.httpOptions);
+   return this.http.put("api/conten", oldContent, this.httpOptions);
  }
 
  getContentList(): Observable<Content[]>{
@@ -34,7 +34,7 @@ export class ContentService {
  }
 
  getSingleContent(id: number): Observable<Content>{
-   this.messageService.add(`Content Item at id: ${id}`);
+ //  this.messageService.add(`Content Item at id: ${id}`);
    return this.http.get<Content>("api/content/" + id);
  }
  

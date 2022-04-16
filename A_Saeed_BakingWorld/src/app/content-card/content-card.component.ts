@@ -14,7 +14,7 @@ export class ContentCardComponent implements OnInit {
 
   constructor() {
     
-   // this.contentItem = { id: 0, title: '', description: '', creator: '', imgURL: ''};
+ //   this.contentItem = { id: 0, title: '', description: '', creator: '', imgURL: ''};
    };
 
   ngOnInit(): void { }
