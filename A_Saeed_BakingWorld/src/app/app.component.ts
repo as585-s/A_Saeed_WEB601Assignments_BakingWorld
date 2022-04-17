@@ -1,3 +1,4 @@
+import { LogUpdateService } from './services/log-update.service';
 
 import { Component, OnInit } from '@angular/core';
 import {Content} from './helper-files/content-interface';
@@ -10,14 +11,19 @@ import { ContentService } from './services/content.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'A_Saeed_BakingWorld';
+  title: string;
   someItem?: Content;
 
-  constructor(private mService: ContentService){  }
+
+  constructor(private mService: ContentService, 
+    private logService: LogUpdateService){
+      this.title = 'Made a change for service worker to notice';
+      }
 
   ngOnInit(): void {
    this.mService.getSingleContent(1).subscribe(contentItem => this.someItem = contentItem);
 
+   this.logService.init();
 }
 
 displayFoodItem(id: string): void{
