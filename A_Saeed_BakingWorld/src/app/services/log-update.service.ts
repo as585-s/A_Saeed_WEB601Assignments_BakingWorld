@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { ContentService } from './content.service';
+import { ApplicationRef, Injectable } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 
 @Injectable({
@@ -6,7 +7,10 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class LogUpdateService {
 
-  constructor(private updates: SwUpdate) { }
+  constructor(private contentService: ContentService,
+    private log: LogUpdateService,
+    private appRef: ApplicationRef,
+    private updates: SwUpdate) { }
 
   public init() {
     this.updates.versionUpdates.subscribe(event => {

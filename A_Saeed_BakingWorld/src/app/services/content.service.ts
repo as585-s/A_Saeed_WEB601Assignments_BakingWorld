@@ -24,8 +24,8 @@ export class ContentService {
    return this.http.post<Content>("api/contentItem", newContent, this.httpOptions);
  }
 
- updateContent(oldContent: Content): Observable<any>{
-   return this.http.put("api/conten", oldContent, this.httpOptions);
+ updateContent(contentItem: Content): Observable<any>{
+   return this.http.put("api/content", contentItem, this.httpOptions);
  }
 
  getContentList(): Observable<Content[]>{
