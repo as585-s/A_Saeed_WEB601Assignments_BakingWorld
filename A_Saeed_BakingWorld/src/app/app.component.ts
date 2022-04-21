@@ -1,9 +1,10 @@
 import { LogUpdateService } from './services/log-update.service';
 
-import { Component, OnInit } from '@angular/core';
+import { ApplicationRef, Component, OnInit } from '@angular/core';
 import {Content} from './helper-files/content-interface';
 import { ContentService } from './services/content.service';
 import { SwUpdate } from '@angular/service-worker'
+import { concat, first, interval } from 'rxjs';
 
 
 @Component({
@@ -12,36 +13,38 @@ import { SwUpdate } from '@angular/service-worker'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title: string;
+  title = `ASaeed Baking World`;
   someItem?: Content;
-  appRef: any;
-  updates: any;
-
 
   constructor(private mService: ContentService, 
-    private logService: LogUpdateService,
-    private swUpdate: SwUpdate){
-      this.title = 'Made a change for service worker to notice';
-      }
+    private logUpdateService: LogUpdateService,
+    private appRef: ApplicationRef,
+    private updates: SwUpdate){ }
 
   ngOnInit(): void {
+    if (navigator.serviceWorker) {
+      this.logUpdateService.init();
+
+      const appIsStable$ = this.appRef.isStable.pipe(
+        first(isThisStableYet => isThisStableYet === true));
+
+        const everyHalfHour$ = interval((1 * 60 * 60 * 1000)/2);
+        const everyHalfHourOnceAppIsSatble$ = 
+        concat(appIsStable$, everyHalfHour$);
+        everyHalfHourOnceAppIsSatble$.subscribe(
+          () => this.updates.checkForUpdate());
+    }
+    else {
+
+    }
    this.mService.getSingleContent(1).subscribe(contentItem => this.someItem = contentItem);
-
-   this.logService.init();
-/*
-   const appIsStable$ = this.appRef.isStable.pipe (
-     first ((isStable: boolean) => isStable === true));
-   const everyHour$ = interval (1 * 60 * 60 * 1000);
-   const everyHourOnceAppIsStable$ = 
-    concat(appIsStable$, everyHour$);
-
-  everyHourOnceAppIsStable$.subscribe(
-    () => this.updates.checkForUpdate());
-*/
 }
 
 displayFoodItem(id: string): void{
   this.mService.getSingleContent(parseInt(id)).subscribe(contentItem => this.someItem = contentItem)
+}
+displayContentItem(id: string): void {
+  this.mService.getSingleContent(parseInt(id)).subscribe(contentItem => this.someItem = contentItem);
 }
 
 }
