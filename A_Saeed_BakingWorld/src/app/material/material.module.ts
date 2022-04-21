@@ -6,6 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDialogModule} from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 const MaterialComponents = [
@@ -17,7 +18,8 @@ const MaterialComponents = [
   MatDialogModule,
   MatChipsModule,
   MatDialogModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatSnackBarModule
  ]
 
 @NgModule({
