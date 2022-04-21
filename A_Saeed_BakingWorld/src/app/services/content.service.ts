@@ -19,23 +19,23 @@ export class ContentService {
    return this.http.get<Content[]>("api/content");
  }
 */
- addContent(newContent: Content): Observable<Content>{
+ addContent(newContentItem: Content): Observable<Content>{
    this.messageService.add("Going to add food item to the server!");
-   return this.http.post<Content>("api/contentItem", newContent, this.httpOptions);
+   return this.http.post<Content>("api/contentItem", newContentItem, this.httpOptions);
  }
 
- updateContent(contentItem: Content): Observable<any>{
-   return this.http.put("api/content", contentItem, this.httpOptions);
+ updateContent(oldContentItem: Content): Observable<any>{
+   return this.http.put("api/contentItem", oldContentItem, this.httpOptions);
  }
 
  getContentList(): Observable<Content[]>{
 //   this.messageService.add("Content array loaded");
-   return this.http.get<Content[]>("api/content")
+   return this.http.get<Content[]>("api/contentItem")
  }
 
  getSingleContent(id: number): Observable<Content>{
  //  this.messageService.add(`Content Item at id: ${id}`);
-   return this.http.get<Content>("api/content/" + id);
+   return this.http.get<Content>("api/contentItem/" + id);
  }
  
 }

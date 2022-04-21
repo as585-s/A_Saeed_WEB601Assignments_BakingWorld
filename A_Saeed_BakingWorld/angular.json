@@ -104,7 +104,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "my-theme.css",
+             
               "src/styles.scss"
             ],
             "scripts": []
